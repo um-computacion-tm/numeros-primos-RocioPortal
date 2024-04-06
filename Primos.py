@@ -1,14 +1,12 @@
 import unittest
 
-div = 2 
 def is_primo(value):
-    # valor % div -> resto
-    while (div < value):
-        if value % div == 0 :
-            return False 
-    div += 1 
-    return True
-
+    if value < 1:  
+        return False
+    for i in range(2, value):  
+        if value % i == 0:  
+            return False
+    return True  
 
 class TestPrimos(unittest.TestCase):
     def test_1(self):
@@ -46,4 +44,6 @@ class TestPrimos(unittest.TestCase):
     def test_negativo(self):
         result = is_primo(-4)
         self.assertEqual(result, False)
-unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()
