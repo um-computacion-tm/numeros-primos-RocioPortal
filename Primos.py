@@ -35,5 +35,15 @@ class TestPrimos(unittest.TestCase):
         result = is_primo(6)
         self.assertEqual(result, False)
 
+    def test_30(self):
+        result = is_primo(30)
+        self.assertEqual(result, False)
 
+    def test_1049(self):
+        result = is_primo(1049)
+        self.assertEqual(result, True)
+    
+    def test_negativo(self):
+        result = is_primo(-4)
+        self.assertEqual(result, False)
 unittest.main()
